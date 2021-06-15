@@ -28,12 +28,37 @@ class MainWindow(QWidget, Ui_mainWindow):
         self.about_button.setIcon(QIcon("ui/about.png"))
         self.logo.setIcon(QIcon("ui/logo.png"))
 
-        #去除button边框
-        Qss = '''
-                QPushButton{border:none #F3F3F5; color:black;;}
-                '''
-        self.setStyleSheet(Qss)
+        QSS = '''
+            QPushButton#logo{border:none #F3F3F5;}
+            QPushButton#main_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }
+            QPushButton#cnRank_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }
+            QPushButton#worldRank_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }
+            QPushButton#chemRank_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }
+            QPushButton#teacher_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }
+            QPushButton#about_button{background-color:white;                                    
+                                    border-radius:10px;
+                                    border:2px solid #00B1F0
+                                    }                                                                                                                                                                                                                                                           
+            QWidget{background-color:#F7F7FF;}
+            
+            '''
 
+        self.setStyleSheet(QSS)
 
 
         self.display = QStackedLayout(self.frame)
@@ -80,9 +105,6 @@ if __name__ == "__main__":
 
     app = QApplication(sys.argv)
     example = MainWindow()
-    Qss = '''
-            QPushButton{border:1px solid #F3F3F5; color:black}
-            '''
-    example.setStyleSheet(Qss)
+
     example.show()
     sys.exit(app.exec_())
